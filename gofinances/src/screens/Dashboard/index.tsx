@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Text, View } from "react-native";
+import { HighlightCard } from "../../components/HighlightCard";
 
 import { 
     Container, 
@@ -10,7 +10,9 @@ import {
     Photo,
     User,
     UserName,
-    UserGreetings
+    UserGreetings,
+    Icon,
+    HighlightCards
  } from "./styles";
 
 export function Dashboard(){
@@ -25,8 +27,36 @@ export function Dashboard(){
                             <UserName>Ronald</UserName>
                         </User>
                     </ProfileBox>
+
+                    <Icon name="power" />
                 </UserWrapper>
             </Header>
+
+            <HighlightCards>
+                <HighlightCard
+                    title="Entradas"
+                    lastTransaction="Ultima entrada dia 13 de abril"
+                    amount="R$ 12.200,00"
+                    type="up"
+                >   
+                </HighlightCard>
+
+                <HighlightCard
+                     title="Saidas"
+                     lastTransaction="Ultima saida dia 20 maio"
+                     amount="R$ 1.800,00"
+                     type="down"
+                >
+
+                </HighlightCard>
+                <HighlightCard
+                    title="Total"
+                    lastTransaction="Ultima saida dia 20 maio"
+                    amount="R$ 2.200,00"
+                    type="total"
+                >
+                </HighlightCard>
+            </HighlightCards>
         </Container>
     )
 }
