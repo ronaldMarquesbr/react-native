@@ -22,7 +22,12 @@ export const UserWrapper = styled.View`
     align-items: center;
     justify-content: space-between;
 
-    margin-top: ${getStatusBarHeight() + RFValue(28)}px;
+    /* margin-top: ${getStatusBarHeight() + RFValue(18)}px; */
+    margin-top: ${
+        (getStatusBarHeight() > RFPercentage(3)) ?
+        RFPercentage(3) : 
+        getStatusBarHeight() + RFValue(15)
+    }px;
     padding: 0 ${RFValue(24)}px;
 `;
 
@@ -66,5 +71,18 @@ export const HighlightCards = styled.ScrollView.attrs({
     width: 100%;
 
     position: absolute;
-    margin-top: ${RFPercentage(30)}px;
+    margin-top: ${RFPercentage(18)}px;
+`;
+
+export const Transactions = styled.View`
+    flex: 1;
+
+    padding: 0 ${RFValue(24)}px;
+    margin-top: ${RFPercentage(10)}px;
+`;
+export const Title = styled.Text`
+    font-size: ${RFValue(18)}px;
+    font-family: ${({ theme }) => theme.fonts.regular};
+
+    margin-bottom: ${RFValue(16)}px;
 `;
